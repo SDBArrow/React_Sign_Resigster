@@ -5,7 +5,7 @@ class Sign extends Component {
     render() { 
         return (
             <div class="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
-                <div class="bg-logo w-full h-32 bg-no-repeat bg-center bg-contain " />
+                <div class="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
                 <div class="bg-white h-20 mt-16  rounded-2xl py-3">
                     <label for="email" class="ml-4">Email 信箱</label>
                     <div class="flex mx-4">

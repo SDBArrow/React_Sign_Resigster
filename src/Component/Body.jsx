@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-
-
+import Sign from './Sign';
+import Image from './Image';
 class Body extends Component {
     state = {}
     render() {
         return (
-            <div class="grid grid-cols-2 gap-1">
-                <div class="">1</div>
-                <div class="">2</div>
-            </div>
+            <product class="flex flex-col gap-24 sm:flex-row sm:w-full sm:gap-24">
+                <Image/>
+                <Sign/>
+            </product>
         );
     }
 }
