@@ -25,16 +25,16 @@ class Register extends Component {
                     </div>
                 </div>
                 <div class="bg-white h-20 mt-8  rounded-2xl py-3">
-                    <label for="password" class="ml-4">密碼</label>
+                    <label for="passwordcheck" class="ml-4">y再次輸入密碼</label>
                     <div class="flex mx-4">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
-                        <input class="w-80 ml-4 mt-1" type="password" name="password" placeholder="············" />
+                        <input class="w-80 ml-4 mt-1" type="passwordcheck" name="passwordcheck" placeholder="············" />
                     </div>
                 </div>
-                <button class="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl">登入</button>
-                <div class=" grid gap-48 grid-cols-2 mt-8"><span class="w-8 cursor-pointer">註冊</span><span class="cursor-pointer">忘記密碼?</span></div>
+                <button class="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl">註冊</button>
+                <div class=" grid gap-48 grid-cols-2 mt-8"><span class="w-8 cursor-pointer">登入</span><span class="cursor-pointer">忘記密碼?</span></div>
             </div>
         );
     }
