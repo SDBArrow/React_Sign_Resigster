@@ -5,7 +5,7 @@ class Register extends Component {
     render() { 
         return (
             <div class="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
-                <div class="bg-logo w-full h-32 bg-no-repeat bg-center bg-contain " />
+                <div class="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
                 <div class="bg-white h-20 mt-16  rounded-2xl py-3">
                     <label for="email" class="ml-4">Email 信箱</label>
                     <div class="flex mx-4">
@@ -25,7 +25,7 @@ class Register extends Component {
                     </div>
                 </div>
                 <div class="bg-white h-20 mt-8  rounded-2xl py-3">
-                    <label for="passwordcheck" class="ml-4">y再次輸入密碼</label>
+                    <label for="passwordcheck" class="ml-4">再次輸入密碼</label>
                     <div class="flex mx-4">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
