@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Image from './Image';
+import { Link } from "react-router-dom";
 
 class Sign extends Component {
     state = {}
     render() {
         return (
-            <product class="flex flex-col gap-24 sm:flex-row sm:w-full sm:gap-24">
+            <product class="flex flex-col gap-24 sm:flex-row sm:w-full sm:gap-24 ">
                 <Image/>
                 <div class="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
                     <div class="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
@@ -28,7 +29,7 @@ class Sign extends Component {
                         </div>
                     </div>
                     <button class="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl">登入</button>
-                    <div class=" grid gap-48 grid-cols-2 mt-8"><span class="w-8 cursor-pointer">註冊</span><span class="cursor-pointer">忘記密碼?</span></div>
+                    <div class=" grid gap-48 grid-cols-2 mt-8"><span class="w-8 cursor-pointer"><Link to="/Register">註冊</Link></span><span class="cursor-pointer"><Link to="/Forget">忘記密碼?</Link></span></div>
                 </div>
             </product>
         );

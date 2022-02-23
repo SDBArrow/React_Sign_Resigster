@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class Register extends Component {
     state = {  } 
@@ -34,7 +35,7 @@ class Register extends Component {
                     </div>
                 </div>
                 <button class="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl">註冊</button>
-                <div class=" grid gap-48 grid-cols-2 mt-8"><span class="w-8 cursor-pointer">登入</span><span class="cursor-pointer">忘記密碼?</span></div>
+                <div class=" grid gap-48 grid-cols-2 mt-8"><span class="w-8 cursor-pointer"><Link to="/">登入</Link></span><span class="cursor-pointer"><Link to="/Forget">忘記密碼?</Link></span></div>
             </div>
         );
     }

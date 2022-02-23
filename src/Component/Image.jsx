@@ -6,8 +6,8 @@ class Image extends Component {
     render() { 
         return (
             <div class ="ml-0 sm:ml-24">
-                <p class="text-center text-3xl text-blue-400 sm:mt-24">AGV WebAPP</p>
-                <img class = "rounded-lg sm:h-72 mt-10 sm:mt-24 w-96" src={logo2} alt="Image"/>
+                <p class="text-center text-3xl text-blue-400 sm:mt-24 ">AGV WebAPP</p>
+                <img class = "rounded-lg sm:h-72 mt-10 sm:mt-24 w-96 shadow-2xl" src={logo2} alt="Image"/>
             </div>
 
         );
