@@ -6,8 +6,3 @@ body {
   @apply flex justify-center p-5;
   background: #dde5f4;
 }
-@layer components {
-  product {
-    @apply w-full p-3 bg-gray-100 border rounded-lg shadow-lg justify-center  ;
-  }
-}
