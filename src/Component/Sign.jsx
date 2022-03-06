@@ -5,13 +5,17 @@ import { Link } from "react-router-dom";
 class Sign extends Component {
     state = {}
     
+   
+
     loginaccount(){
+        const data= { email: 'j25889651556@gmail.com',password: "Aimma41904230" }
         const requestOptions = {
             method: 'POST',
-            headers: { 
-                'Access-Control-Allow-Origin':'*',
-                'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: 'j25889651556@gmail.com',password: "Aimma41904230"})
+            mode: 'cors',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+            }),
+            body: JSON.stringify(data)
         };
         fetch('https://sign-register.herokuapp.com/login.php', requestOptions)
             .then(response => response.json())
