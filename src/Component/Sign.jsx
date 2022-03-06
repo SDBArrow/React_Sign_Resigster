@@ -8,7 +8,9 @@ class Sign extends Component {
     loginaccount(){
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Access-Control-Allow-Origin':'*',
+                'Content-Type': 'application/json' },
             body: JSON.stringify({ email: 'j25889651556@gmail.com',password: "Aimma41904230"})
         };
         fetch('https://sign-register.herokuapp.com/login.php', requestOptions)
