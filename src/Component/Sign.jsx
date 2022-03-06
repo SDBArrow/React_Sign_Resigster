@@ -13,6 +13,7 @@ class Sign extends Component {
             method: 'POST',
             mode: 'cors',
             headers: new Headers({
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json; charset=UTF-8',
             }),
             body: JSON.stringify(data)
