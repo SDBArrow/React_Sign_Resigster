@@ -19,9 +19,7 @@ class Sign extends Component {
         };
         fetch('https://sign-register.herokuapp.com/login.php', requestOptions)
             .then(response => response.json())
-            .then(data => this.setState({
-                message: data.message,
-                jwt: data.jwt}));
+            .then(data => this.setState({}));
     }
     render() {
         return (
