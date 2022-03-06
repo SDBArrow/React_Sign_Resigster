@@ -11,7 +11,7 @@ class Sign extends Component {
         const data= { email: 'j25889651556@gmail.com',password: "Aimma41904230" }
         const requestOptions = {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
             }),
