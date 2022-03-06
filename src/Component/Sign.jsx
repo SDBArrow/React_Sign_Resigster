@@ -4,6 +4,19 @@ import { Link } from "react-router-dom";
 
 class Sign extends Component {
     state = {}
+    
+    loginaccount(){
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: 'j25889651556@gmail.com',password: "Aimma41904230"})
+        };
+        fetch('http://sign-register.herokuapp.com/login.php', requestOptions)
+            .then(response => response.json())
+            .then(data => this.setState({
+                message: data.message,
+                jwt: data.jwt}));
+    }
     render() {
         return (
             <div className='w-full p-3 bg-gray-100 border rounded-lg shadow-lg justify-center'>
@@ -29,7 +42,7 @@ class Sign extends Component {
                             <input className="w-80 ml-4 mt-1" type="password" name="password" placeholder="············" />
                         </div>
                     </div>
-                    <button className="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl cursor-pointer hover:bg-sky-700 active:bg-indigo-800">登入</button>
+                    <button className="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl cursor-pointer hover:bg-sky-700 active:bg-indigo-800" onClick={this.loginaccount}>登入</button>
                     <div className=" grid gap-48 grid-cols-2 mt-8"><span className="w-8 cursor-pointer"><Link to="/Register">註冊</Link></span><span className="cursor-pointer"><Link to="/Forget">忘記密碼?</Link></span></div>
                 </div>
                 </div>
