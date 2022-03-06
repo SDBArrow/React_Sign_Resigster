@@ -11,9 +11,7 @@ class Sign extends Component {
         const data= { email: 'j25889651556@gmail.com',password: "Aimma41904230" }
         const requestOptions = {
             method: 'POST',
-            mode: 'cors',
             headers: new Headers({
-                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json; charset=UTF-8',
             }),
             body: JSON.stringify(data)
