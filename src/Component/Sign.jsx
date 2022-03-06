@@ -29,7 +29,7 @@ class Sign extends Component {
                             <input className="w-80 ml-4 mt-1" type="password" name="password" placeholder="············" />
                         </div>
                     </div>
-                    <button className="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl">登入</button>
+                    <button className="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl cursor-pointer hover:bg-sky-700 active:bg-indigo-800">登入</button>
                     <div className=" grid gap-48 grid-cols-2 mt-8"><span className="w-8 cursor-pointer"><Link to="/Register">註冊</Link></span><span className="cursor-pointer"><Link to="/Forget">忘記密碼?</Link></span></div>
                 </div>
                 </div>
