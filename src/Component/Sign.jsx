@@ -11,7 +11,7 @@ class Sign extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: 'j25889651556@gmail.com',password: "Aimma41904230"})
         };
-        fetch('http://sign-register.herokuapp.com/login.php', requestOptions)
+        fetch('https://sign-register.herokuapp.com/login.php', requestOptions)
             .then(response => response.json())
             .then(data => this.setState({
                 message: data.message,
