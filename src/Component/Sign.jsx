@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class Sign extends Component {
     state = {
-        email: '',
+        email: "",
         password: ""
     }
 
@@ -12,7 +12,6 @@ class Sign extends Component {
         const name = event.target.name;
         const value = event.target.value;
         this.setState({[name]: value})
-        //console.log('state: ',this.state)
     }
 
     loginaccount = (event) =>{
@@ -34,6 +33,7 @@ class Sign extends Component {
     }
 
     render() {
+        console.log('state: ',this.state)
         return (
             <div className='w-full p-3 bg-gray-100 border rounded-lg shadow-lg justify-center'>
                 <div className='flex flex-col gap-24 sm:flex-row sm:w-full sm:gap-24'>
