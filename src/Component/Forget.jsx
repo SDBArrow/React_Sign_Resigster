@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 class Forget extends Component {
     state = {
         email: "",
-        bt_forget: "disabled",
-        code: null
+        bt_forget: "",
     }
 
     getEmail = (event) => {
@@ -36,13 +35,12 @@ class Forget extends Component {
         fetch('https://sign-register.herokuapp.com/check_email.php', requestOptions)
             .then(response => response.json())
             .then((responseJson) => {
-                console.log(responseJson.code);
-                this.setState({ code: responseJson.code }, () => { })
-                /*
-                localStorage.setItem("message", responseJson.message);
-                localStorage.setItem("code", responseJson.code);*/
+                if(responseJson.code==="51"){
+                    window.location.href="/"
+                }else{
+
+                }
             })
-        console.log(this.state.code);
     }
 
     render() {
