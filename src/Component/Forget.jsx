@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 class Forget extends Component {
-    state = { 
+    state = {
         email: "",
         bt_forget: "disabled",
-    } 
+        code: null
+    }
 
     getEmail = (event) => {
         const name = event.target.name;
@@ -36,13 +37,15 @@ class Forget extends Component {
             .then(response => response.json())
             .then((responseJson) => {
                 console.log(responseJson.code);
+                this.setState({ code: responseJson.code }, () => { })
                 /*
                 localStorage.setItem("message", responseJson.message);
                 localStorage.setItem("code", responseJson.code);*/
             })
+        console.log(this.state.code);
     }
-    
-    render() { 
+
+    render() {
         return (
             <div className="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
                 <div className="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
@@ -61,5 +64,5 @@ class Forget extends Component {
         );
     }
 }
- 
+
 export default Forget;
