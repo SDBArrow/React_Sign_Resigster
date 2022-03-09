@@ -64,18 +64,15 @@ class Register extends Component {
                 this.setState({ input_password: false})
                 this.setState({ bt_register: "disabled" }, () => { })
             }
-
         });
-
-
     }
+
     registeraccount = (event) => {
         /*
         const data = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
             email: this.state.email,
-            password: this.state.firstname,
-            password: this.state.lastname,
-            password: this.state.email,
             password: this.state.password,
         }
         const requestOptions = {

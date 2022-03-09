@@ -22,13 +22,8 @@ class Forget extends Component {
     }
 
     forget = (event) => {
-        /*
         const data = {
             email: this.state.email,
-            password: this.state.firstname,
-            password: this.state.lastname,
-            password: this.state.email,
-            password: this.state.password,
         }
         const requestOptions = {
             method: 'POST',
@@ -37,11 +32,14 @@ class Forget extends Component {
             }),
             body: JSON.stringify(data)
         };
-        fetch('https://sign-register.herokuapp.com/register.php', requestOptions)
+        fetch('https://sign-register.herokuapp.com/check_email.php', requestOptions)
             .then(response => response.json())
             .then((responseJson) => {
+                console.log(responseJson.code);
+                /*
                 localStorage.setItem("message", responseJson.message);
-            })*/
+                localStorage.setItem("code", responseJson.code);*/
+            })
     }
     
     render() { 
