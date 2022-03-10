@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
-class Forget extends Component {
+function test() {
     state = {
         email: "",
-        bt_forget: "disabled",
+        bt_forget: "",
     }
 
     getEmail = (event) => {
@@ -43,7 +43,7 @@ class Forget extends Component {
             })
     }
 
-    render() {
+
         return (
             <div className="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
                 <div className="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
@@ -60,7 +60,5 @@ class Forget extends Component {
                 <div className=" grid gap-72 grid-cols-2 mt-8 "><span className="w-8 cursor-pointer"><Link to="/">登入</Link></span><span className="cursor-pointer"><Link to="/Register">註冊</Link></span></div>
             </div>
         );
-    }
-}
 
-export default Forget;
+}
