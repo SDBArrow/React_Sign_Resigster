@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Popup from './Popup';
 
 function Register() {
-
     const [firstname, setFirstName] = useState("")
     const [lastname, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -12,6 +12,9 @@ function Register() {
     const [input_email, setinput_email] = useState(false)
     const [input_password, setinput_password] = useState(false)
     const [input_name, setinput_name] = useState(false)
+    const navigate = useNavigate();
+    const [ButtonPop, setButtonPop] = useState(false);
+    const [inputValue, setInputValue] = useState("");
 
 
     const GetFirstName = (event) => {
@@ -93,16 +96,25 @@ function Register() {
             }),
             body: JSON.stringify(data)
         };
-        fetch('https://sign-register.herokuapp.com/register.php', requestOptions)
+        fetch('https://sign-register.herokuapp.com/create_user.php', requestOptions)
             .then(response => response.json())
             .then((responseJson) => {
-                localStorage.setItem("message", responseJson.message);
+                if (responseJson.code === "51") {
+                    navigate('/')
+                } else if (responseJson.code === "52") {
+                    setInputValue(responseJson.message)
+                    setButtonPop(true)
+                } else if (responseJson.code === "53") {
+                    setInputValue(responseJson.message)
+                    setButtonPop(true)
+                }
             })
     }
 
 
     return (
         <div className="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
+            <Popup trigger={ButtonPop} setButtonPop={setButtonPop} inputValue={inputValue} />
             <div className="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
             <div className="h-20 mt-16 gap-8 flex ">
                 <div className="bg-white rounded-2xl w-40 py-3 ">

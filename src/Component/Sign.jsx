@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import Image from './Image';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Popup from './Popup';
 
 function Sign() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [ButtonPop, setButtonPop] = useState(false);
+    const [inputValue, setInputValue] = useState("");
+    const navigate = useNavigate();
 
     const GetEmail = (event) => {
         setEmail(event.target.value)
@@ -26,14 +30,20 @@ function Sign() {
         fetch('https://sign-register.herokuapp.com/login.php', requestOptions)
             .then(response => response.json())
             .then((responseJson) => {
-                localStorage.setItem("message", responseJson.message);
-                localStorage.setItem("jwt", responseJson.jwt);
+                if (responseJson.code === "11") {
+                    localStorage.setItem("jwt", responseJson.jwt);
+                    navigate('/Hall')
+                } else if(responseJson.code === "12"){
+                    setInputValue(responseJson.message)
+                    setButtonPop(true)
+                }
             })
     }
 
 
     return (
         <div className='w-full p-3 bg-gray-100 border rounded-lg shadow-lg justify-center'>
+            <Popup trigger={ButtonPop} setButtonPop={setButtonPop} inputValue={inputValue} />
             <div className='flex flex-col gap-24 sm:flex-row sm:w-full sm:gap-24'>
                 <Image />
                 <div className="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">

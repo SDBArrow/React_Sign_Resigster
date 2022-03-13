@@ -4,6 +4,7 @@ import Sign from './Sign';
 import Register from './Register';
 import Forget from './Forget';
 import Error from './Error';
+import Hall from './Hall';
 
 
 class Body extends Component {
@@ -16,6 +17,7 @@ class Body extends Component {
                     <Route path="/Register" element={<Register />} />
                     <Route path="/Forget" element={<Forget />} />
                     <Route path="*" element={<Error />} />
+                    <Route path="/Hall" element={<Hall />} />
                 </Routes>
             </Router>
         );

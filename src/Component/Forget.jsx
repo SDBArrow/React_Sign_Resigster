@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Popup from './Popup';
 
 function Forget() {
-
+    const [ButtonPop, setButtonPop] = useState(false);
+    const [inputValue, setInputValue] = useState("");
     const [email, setEmail] = useState("");
     const [bt_forget, setbt_forget] = useState("disabled");
-
+    const navigate = useNavigate();
     const GetEmail = (event) => {
         setEmail(event.target.value);
     }
@@ -35,15 +37,20 @@ function Forget() {
             .then(response => response.json())
             .then((responseJson) => {
                 if (responseJson.code === "51") {
-                    window.location.href = "/"
-                } else {
-
+                    navigate('/')
+                } else if (responseJson.code === "52") {
+                    setInputValue(responseJson.message)
+                    setButtonPop(true)
+                }else if (responseJson.code === "01") {
+                    setInputValue(responseJson.message)
+                    setButtonPop(true)
                 }
             })
     }
 
     return (
         <div className="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
+            <Popup trigger={ButtonPop} setButtonPop={setButtonPop} inputValue={inputValue} />
             <div className="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
             <div className="bg-white h-20 mt-16  rounded-2xl py-3">
                 <label className="ml-4">請輸入註冊的Email</label>
