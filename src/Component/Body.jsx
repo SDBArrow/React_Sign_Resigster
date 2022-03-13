@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sign from './Sign';
 import Register from './Register';
 import Forget from './Forget';
 import Error from './Error';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 class Body extends Component {
@@ -23,6 +23,12 @@ class Body extends Component {
 }
 
 export default Body;
+
+
+
+
+
+
 
 
 

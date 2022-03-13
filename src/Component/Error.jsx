@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Error extends Component {
-    state = {}
-    render() {
-        return (
+function Error() {
+    return (
         <h1>Error! PAGE NOT FOUND</h1>);
-    }
+
 }
 
 export default Error;

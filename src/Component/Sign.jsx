@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Image from './Image';
 import { Link } from "react-router-dom";
 
-class Sign extends Component {
-    state = {
-        email: "",
-        password: ""
+function Sign() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const GetEmail = (event) => {
+        setEmail(event.target.value)
+    }
+    const GetPassword = (event) => {
+        setPassword(event.target.value)
     }
 
-    getValue = (event) =>{
-        const name = event.target.name;
-        const value = event.target.value;
-        this.setState({[name]: value})
-    }
+    function Loginaccount() {
+        const data = { email: email, password: password }
 
-    loginaccount = (event) =>{
-        const data= { email: this.state.email, password: this.state.password }
-        
         const requestOptions = {
             method: 'POST',
             headers: new Headers({
@@ -32,12 +31,11 @@ class Sign extends Component {
             })
     }
 
-    render() {
-        console.log('state: ',this.state)
-        return (
-            <div className='w-full p-3 bg-gray-100 border rounded-lg shadow-lg justify-center'>
-                <div className='flex flex-col gap-24 sm:flex-row sm:w-full sm:gap-24'>
-                <Image/>
+
+    return (
+        <div className='w-full p-3 bg-gray-100 border rounded-lg shadow-lg justify-center'>
+            <div className='flex flex-col gap-24 sm:flex-row sm:w-full sm:gap-24'>
+                <Image />
                 <div className="w-96 bg-indigo-50 rounded-3xl py-20 select-none px-4">
                     <div className="bg-logo1 w-full h-32 bg-no-repeat bg-center bg-contain " />
                     <div className="bg-white h-20 mt-16  rounded-2xl py-3">
@@ -46,7 +44,7 @@ class Sign extends Component {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            <input className="w-80 ml-4 mt-1 pl-1" type="email" name="email" placeholder="Username@gmail.com" onChange={this.getValue}/>
+                            <input className="w-80 ml-4 mt-1 pl-1" type="email" name="email" placeholder="Username@gmail.com" onChange={GetEmail} />
                         </div>
                     </div>
                     <div className="bg-white h-20 mt-8  rounded-2xl py-3">
@@ -55,16 +53,16 @@ class Sign extends Component {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                             </svg>
-                            <input className="w-80 ml-4 mt-1 pl-1" type="password" name="password" placeholder="············" onChange={this.getValue}/>
+                            <input className="w-80 ml-4 mt-1 pl-1" type="password" name="password" placeholder="············" onChange={GetPassword} />
                         </div>
                     </div>
-                    <button className="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl cursor-pointer hover:bg-sky-700 active:bg-indigo-800" onClick={this.loginaccount}>登入</button>
+                    <button className="h-10 w-full mt-8 bg-indigo-800 text-white rounded-3xl cursor-pointer hover:bg-sky-700 active:bg-indigo-800" onClick={Loginaccount}>登入</button>
                     <div className=" grid gap-48 grid-cols-2 mt-8"><span className="w-8 cursor-pointer"><Link to="/Register">註冊</Link></span><span className="cursor-pointer"><Link to="/Forget">忘記密碼?</Link></span></div>
                 </div>
-                </div>
             </div>
-        );
-    }
+        </div>
+    );
+
 }
 
 export default Sign;
